@@ -5,7 +5,13 @@ class TransformTool extends FabricTool {
     let canvas = this._canvas
     canvas.isDrawingMode = false
     canvas.selection = true
-    canvas.forEachObject((o) => (o.selectable = o.evented = true))
+    // canvas.forEachObject((o) => (o.selectable = o.evented = true))
+
+    canvas.forEachObject((o) => {
+      o.selectable = o.evented = true
+      o.setControlsVisibility({ mtr: false })
+      o.lockRotation = true
+    })
 
     // instead of looking for target of double click,
     // assume double click on object clears the selected object

@@ -7,6 +7,11 @@ class RectTool extends FabricTool {
   strokeWidth: number = 10
   strokeColor: string = "#ffffff"
   currentRect: fabric.Rect = new fabric.Rect()
+  // currentRect: fabric.Rect = new fabric.Rect({
+  //   hasRotatingPoint: false,
+  //   centeredRotation: false,
+  //   lockRotation:true
+  // })
   currentStartX: number = 0
   currentStartY: number = 0
   _minLength: number = 10
@@ -60,8 +65,13 @@ class RectTool extends FabricTool {
       strokeUniform: true,
       noScaleCache: false,
       angle: 0,
+      // hasRotatingPoint: false,
+      // centeredRotation: false,
+      // lockRotation:true
     })
+
     if (_clicked === 0) {
+      // this.currentRect.lockRotation = true
       canvas.add(this.currentRect)
     }
   }
